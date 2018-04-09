@@ -48,7 +48,7 @@
 									</div>
 
 									<div class="col-xs-6 text-right">
-										<span class="h5 product-item-price">$49.00</span>
+										<span class="h5 product-item-price">${{ $product->product_detail[0]->price }}</span>
 									</div>
 								</div>
 							</div>

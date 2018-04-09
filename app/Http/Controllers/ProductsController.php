@@ -16,7 +16,7 @@ class ProductsController extends Controller
     	}
     	else
     	{
-    		$products = Products::where('category', $category)->paginate(9);
+    		$products = Products::with('product_detail')->where('category', $category)->paginate(9);
     	}
 
     	return view('products_list')->with(compact('products','category'));

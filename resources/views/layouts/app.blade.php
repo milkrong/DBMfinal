@@ -1,9 +1,9 @@
 
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="{{ app()->getLocale() }}">
     <head>
         <meta charset="utf-8">
-        <title>vega - ecommerce</title>
+        <title>Cafe Shop</title>
         <meta name="description" content="">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
@@ -29,9 +29,15 @@
 					<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
 						
 						<ul class="navbar-user mb-30 pull-left width-100">
+							@if (Auth::guest())
 							<li>
 								<span data-toggle="modal" data-target="#myModal" class="ti-user"></span>
 							</li>
+							@else
+							<li>
+								<span data-toggle="modal" data-target="#loggedModal" class="ti-user"></span>
+							</li>
+							@endif
 							<li>
 								<span data-focus="search" data-toggle="modal" data-target="#searchModal" class="ti-search"></span>
 							</li>
@@ -109,7 +115,7 @@
                                 </ul>
 		                    </li>
 	                   
-		                    <li class="active"><a href="#">About us</a></li> 
+		                    <li class="active"><a href="{{ url('about') }}">About us</a></li> 
 						</ul>
 					</div>
 			  	</div>
@@ -136,21 +142,36 @@
 				                        </div>
 				                    </div>
 				                </div>
+				                @if (session()->has('success_message'))
+					            <div class="alert alert-success">
+					                {{ session()->get('success_message') }}
+					            </div>
+					            @endif
+				                @if(count($errors) > 0)
+					            <div class="alert alert-danger">
+					                <ul>
+					                    @foreach ($errors->all() as $error)
+					                    <li>{{ $error }}</li>
+					                    @endforeach
+					                </ul>
+					            </div>
+	            				@endif
 				                <div class="panel-body">
-				                    <form id="loginform" class="form-horizontal pl-15 pr-15 pt-15">
+				                    <form id="loginform" class="form-horizontal pl-15 pr-15 pt-15" method="POST" action="{{ url('login') }}">
+				                    	{{ csrf_field() }}
 				                        <div class="form-group">
 				                            <div class="col-md-12">
-				                                <input type="text" class="form-control" id="email-sign-in" placeholder="Email Address">
+				                                <input type="text" class="form-control" id="email-sign-in" name="email" placeholder="Email Address" required autofocus>
 				                            </div>
 				                        </div>
 				                        <div class="form-group">
 				                            <div class="col-md-12">
-				                                <input type="password" class="form-control" id="password-sign-in" placeholder="Password">
+				                                <input type="password" class="form-control" id="password-sign-in" name="password" placeholder="Password" required>
 				                            </div>
 				                        </div>
 				                        
 				                        <div class="custom-checkbox custom-checkbox-primary pull-left">
-				                            <input id="custom-checkbox2" class="styled" type="checkbox" checked>
+				                            <input id="custom-checkbox2" class="styled" type="checkbox">
 				                            <label for="custom-checkbox2"> remember me
 				                            </label>
 				                        </div>
@@ -158,7 +179,7 @@
 				                        <div class="form-group">
 				                            <!-- Button -->
 				                            <div class="col-sm-12 login-btn mt-30">
-				                                <a id="btn-sign-in" href="#" class="btn btn-primary">Login  </a>
+				                                <button id="btn-sign-in" type="submit" class="btn btn-primary" >Login  </button>
 				                                <a id="btn-fb-sign-in" href="#" class="btn btn-default">Facebook sign in</a>
 				                            </div>
 				                        </div>
@@ -179,32 +200,57 @@
 				                    </div>
 				                </div>
 				            </div>
+				            @if (session()->has('success_message'))
+				            <div class="alert alert-success">
+				                {{ session()->get('success_message') }}
+				            </div>
+				            @endif
+				            @if(count($errors) > 0)
+				            <div class="alert alert-danger">
+				                <ul>
+				                    @foreach ($errors->all() as $error)
+				                    <li>{{ $error }}</li>
+				                    @endforeach
+				                </ul>
+				            </div>
+            				@endif
 				            <div class="panel-body">
-				                <form id="signupform" class="form-horizontal pl-15 pr-15 pt-15">
+				                <form id="signupform" class="form-horizontal pl-15 pr-15 pt-15" method="POST" action="{{ url('register') }}">
+				                	{{ csrf_field() }}
 				                    <div class="form-group">
 				                        <div class="col-md-12">
-				                            <input type="text" class="form-control" id="email" placeholder="Email Address">
+				                            <input type="text" class="form-control" id="email" name="email" placeholder="Email Address" required autofocus>
 				                        </div>
 				                    </div>
 				                    <div class="form-group">
 				                        <div class="col-md-12">
-				                            <input type="text" class="form-control" id="firstname" placeholder="First Name">
+				                            <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name" required>
 				                        </div>
 				                    </div>
 				                    <div class="form-group">
 				                        <div class="col-md-12">
-				                            <input type="text" class="form-control" id="lastname" placeholder="Last Name">
+				                            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name" required>
 				                        </div>
 				                    </div>
 				                    <div class="form-group">
 				                        <div class="col-md-12">
-				                            <input type="password" class="form-control" id="password" placeholder="Password">
+				                            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+				                        </div>
+				                    </div>
+				                    <div class="form-group">
+				                        <div class="col-md-12">
+				                            <input type="password" class="form-control" id="password-confirmation" name="password_confirmation" placeholder="Password" required>
+				                        </div>
+				                    </div>
+				                    <div class="form-group">
+				                        <div class="col-md-12">
+				                            <input type="text" class="form-control" id="birthday" name="birthday" placeholder="Birthday" required>
 				                        </div>
 				                    </div>
 				                    <div class="form-group mt-30">
 				                        <!-- Button -->
 				                        <div class="col-sm-12 login-btn">
-				                            <a id="btn-sign-up" href="#" class="btn btn-primary">Sign up  </a>
+				                            <button id="btn-sign-up" class="btn btn-primary" type="submit">Sign up  </button>
 				                            <a id="btn-fb-sign-up" href="#" class="btn btn-default">Facebook sign up</a>
 				                        </div>
 				                    </div>
@@ -218,6 +264,19 @@
 	  	</div>
 	</div>
 	<!-- / LOGIN | REGISTER MODAL -->
+
+	<!-- LOGGED MODAL -->
+	<div class="modal fade" id="loggedModal" tabindex="-1" role="dialog" >
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="ti-close" aria-hidden="true"></span></button>
+
+	  	<div class="modal-dialog" role="document">
+	    	<div class="modal-content width-100 pull-left pt-60 pb-60">
+			    <div class="modal-body">
+			    Logged with {{ Auth::user() }}
+				</div>
+	    	</div>
+	  	</div>
+	</div>
 
  	<!-- SEARCH MODAL -->
 	<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" >

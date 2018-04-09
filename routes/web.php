@@ -14,3 +14,6 @@
 Route::get('/', 'HomeController@index');
 Route::get('products/{category}', 'ProductsController@getIndex');
 Route::get('product_detail/{id}', 'ProductsController@getDetail');
+
+Auth::routes();
+
