@@ -26,8 +26,11 @@ The e-commerce website simulate the starbucks@TM
 
 ## Installation and run
 ```
-git clone
+git clone repo
 cd project directory
+
+cp .env.example .env
+#configure the .env with database information
 
 composer install
 php artisan key:generate
