@@ -35,21 +35,18 @@
 						<div class="col-md-4 col-sm-6">
 							<div class="product-item">
 								<div class="product-item-thumbnail text-center mb-15">
-									<a class="product-item-thumbnail-link" href="/product_detail/{{ $product->id }}"></a>
+									<a class="product-item-thumbnail-link" href=" {{ url('/product_detail',$product->id) }}"></a>
 									<img src="{{$product->picture}}" class="img-responsive" alt="product image">
-									<div class="product-item-thumbnail-overlay">
-										<a href="#" class="btn btn-default pulse"><span class="ti-heart mr-0"></span></a>
-										<a href="#" class="btn btn-primary">add to cart</a>
-									</div>
 								</div>
 								<div class="row">
 									<div class="col-xs-6">
-										<a class="h5" href="#">{{$product->name}}</a>
+										<a class="h5" href="{{ url('/product_detail',$product->id) }}">{{$product->name}}</a>
 									</div>
 
 									<div class="col-xs-6 text-right">
 										<span class="h5 product-item-price">${{ $product->product_detail[0]->price }}</span>
 									</div>
+									<a href="{{ url('/cart/add',[$product->id ,'1','large']) }}" class="btn btn-primary">add to cart</a>
 								</div>
 							</div>
 						</div>

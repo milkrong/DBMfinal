@@ -42,8 +42,8 @@
 								<span data-focus="search" data-toggle="modal" data-target="#searchModal" class="ti-search"></span>
 							</li>
 							<li>
-								<span data-toggle="modal" data-target="#cartModal" class="ti-shopping-cart">
-									<span class="navbar-user-counter">3</span>
+								<span class="ti-shopping-cart">
+									<a href="{{ url('/cart')}}"></a>
 								</span>
 							</li>
 						</ul>
@@ -296,105 +296,6 @@
 	  	</div>
 	</div>
 	<!-- / SEARCH MODAL -->
-
-	<!-- CART MODAL -->
-	<div class="modal fade" id="cartModal" tabindex="-1" role="dialog" >
-		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="ti-close" aria-hidden="true"></span></button>
-		
-	  	<div class="modal-dialog" role="document">
-	    	<div class="modal-content width-100 pull-left pt-60 pb-60">
-				<div class="modal-body">
-					<div class="width-100">
-						<ul class="cart-items width-100 pull-left pl-60 pr-30 pb-0 pt-0 container-fluid">
-			                <li class="cart-items-labels visible-lg-block visible-md-block row"> 
-			                    <span class="col-md-6 text-muted small">product</span>
-			                    <span class="col-md-2 text-muted small text-center">quantity</span> 
-			                    <span class="col-md-4 text-muted small text-right">price</span>
-			                </li>
-			                <li class="row">
-			                    <span class="cart-image col-xs-6 col-sm-2">
-			                        <a href="#"><img alt="product description" src="assets/img/products/product-03.jpg"></a>
-			                    </span>
-
-			                    <div class="cart-item-right col-md-10">
-			                    	<div class="row">
-			                            <span class="cart-description col-xs-12 col-md-5">
-			                                <a class="h5" href="#">Product name</a>				   
-			                                <span class="cart-item-price h5 text-muted">$ 33.00</span>
-			                            </span>
-
-										<span class="col-md-2 col-sm-12">
-											<input class="text-center form-control" type="text" value="10">
-										</span>
-
-			                            <span class="col-md-5 col-sm-12 text-right">
-			                                <span class="cart-price pull-right">$330.00 <a class="cart-remove" href="#">
-			                                <span class="ti-trash icon pull-right mt-5 ml-10"></span>
-			                                </a></span>
-			                               
-			                            </span>
-			                        </div>
-			                    </div>
-			                </li>
-			                <li class="row">
-			                    <span class="cart-image col-xs-6 col-sm-2">
-			                        <a href="#"><img alt="product description" src="assets/img/products/product-03.jpg"></a>
-			                    </span>
-
-			                    <div class="cart-item-right col-md-10">
-			                    	<div class="row">
-			                            <span class="cart-description col-xs-12 col-md-5">
-			                                <a class="h5" href="#">Product name</a>                               
-			                                <span class="cart-item-price h5 text-muted">$ 33.00</span>
-			                            </span>
-
-										<span class="col-md-2 col-sm-12">
-											<input class="text-center form-control" type="text" value="10">
-										</span>
-
-			                            <span class="col-md-5 col-sm-12 text-right">
-			                                <span class="cart-price pull-right">$330.00 <a class="cart-remove" href="#">
-			                                <span class="ti-trash icon pull-right mt-5 ml-10"></span>
-			                                </a></span>
-			                               
-			                            </span>
-			                        </div>
-			                    </div>
-			                </li>
-			                <li class="row">
-			                    <span class="cart-image col-xs-6 col-sm-2">
-			                        <a href="#"><img alt="product description" src="assets/img/products/product-03.jpg"></a>
-			                    </span>
-
-			                    <div class="cart-item-right col-md-10">
-			                    	<div class="row">
-			                            <span class="cart-description col-xs-12 col-md-5">
-			                                <a class="h5" href="#">Product name</a>                               
-			                                <span class="cart-item-price h5 text-muted">$ 33.00</span>
-			                            </span>
-
-										<span class="col-md-2 col-sm-12">
-											<input class="text-center form-control" type="text" value="10">
-										</span>
-
-			                            <span class="col-md-5 col-sm-12 text-right">
-			                                <span class="cart-price pull-right">$330.00 <a class="cart-remove" href="#">
-			                                <span class="ti-trash icon pull-right mt-5 ml-10"></span>
-			                                </a></span>
-			                            </span>
-			                        </div>
-			                    </div>
-			                </li>
-			            </ul>
-			            <div class="pull-left width-100 pr-45">
-			            	<a class="btn btn-default pull-right">checkout</a>
-			            </div>
-					</div>
-	     		</div>
-	    	</div>
-	  	</div>
-	</div>
-	<!-- / CART MODAL -->
 
 	@yield('content')
 

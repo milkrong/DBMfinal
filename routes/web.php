@@ -17,3 +17,6 @@ Route::get('product_detail/{id}', 'ProductsController@getDetail');
 
 Auth::routes();
 
+Route::get('/cart', 'CartController@showCart');
+Route::get('/cart/add/{id}/{quantity}/{size}', 'CartController@addItem');
+Route::get('/cart/remove/{id}', 'CartController@removeItem');
