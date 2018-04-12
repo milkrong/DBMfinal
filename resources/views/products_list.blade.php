@@ -46,7 +46,7 @@
 									<div class="col-xs-6 text-right">
 										<span class="h5 product-item-price">${{ $product->product_detail[0]->price }}</span>
 									</div>
-									<a href="{{ url('/cart/add',[$product->id ,'1','large']) }}" class="btn btn-primary">add to cart</a>
+									<a href="{{ url('/cart/add',[$product->id ,'1','large']) }}" class="btn btn-pimary">add to cart</a>
 								</div>
 							</div>
 						</div>

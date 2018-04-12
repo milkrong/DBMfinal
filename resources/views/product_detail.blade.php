@@ -55,7 +55,7 @@
 								</div>
 							</div>
 
-						<button class="btn btn-default mt-30" type="submit">Buy now</button>
+						<a class="btn btn-default mt-30" href="{{ url('cart/add') }}">Add to Cart</a>
 						</fieldset>
 					
 				</div>
@@ -66,27 +66,27 @@
                             
                             <li>
                                 <span class="product-detail-list-label small">In stock</span>
-                                <span class="product-detail-value pull-right small">1400 items</span>
+                                <span class="product-detail-value pull-right small">1000 items</span>
                             </li>
 
                             <li>
                                 <span class="product-detail-list-label small">Fat</span>
-                                <span class="product-detail-value pull-right small" id="product_fat">0</span>
+                                <span class="product-detail-value pull-right small" id="product_fat">{{ $detail->product_detail[0]->fat }}</span>
                             </li>
 
                             <li>
                                 <span class="product-detail-list-label small">Sugar</span>
-                                <span class="product-detail-value pull-right small" id="product_sugar">0</span>
+                                <span class="product-detail-value pull-right small" id="product_sugar">{{ $detail->product_detail[0]->sugar }}</span>
                             </li>
 
                             <li>
                                 <span class="product-detail-list-label small">Calories</span>
-                                <span class="product-detail-value pull-right small" id="product_calories">0</span>
+                                <span class="product-detail-value pull-right small" id="product_calories">{{ $detail->product_detail[0]->calories }}</span>
                             </li>
 
                             <li>
                                 <span class="product-detail-list-label small">Caffeine</span>
-                                <span class="product-detail-value pull-right small" id="product_caffeine">0</span>
+                                <span class="product-detail-value pull-right small" id="product_caffeine">{{ $detail->product_detail[0]->caffeine }}</span>
                             </li>
                         </ul>
                 </div>

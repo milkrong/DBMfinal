@@ -16,8 +16,7 @@ class CartController extends Controller
 
     public function addItem ($productId, $quantity, $size){
 
-    	if(Auth::check())
- 		{
+
 	        $cart = Cart::where('user_id',Auth::user()->id)->first();
 	 
 	        if(!$cart){
@@ -55,17 +54,10 @@ class CartController extends Controller
 
         	}
 			return redirect('/cart');
-        }
-        else
-        {
-        	return redirect('/');
-        }
     }
 
     public function showCart()
     {
-    	if (Auth::check())
-    		{
     		$cart = Cart::where('user_id',Auth::user()->id)->first();
  
 	        if(!$cart)
@@ -101,12 +93,6 @@ class CartController extends Controller
         	$total_taxed = $total + $tax;
  
         	return view('cart',compact('items','total','tax','total_taxed'));
-    	}
-    	else
-    	{
-    		return redirect('/');
-    	}
-    	
     }
 
     public function removeItem($id){

@@ -28,12 +28,10 @@
 		                </li>
 		                @foreach($items as $item)
 		                <li class="row">
-		                    
-
 		                    <div class="cart-item-right col-md-10">
 		                    	<div class="row">
 		                            <span class="cart-description col-xs-12 col-md-5">
-		                                <a class="h5" href="usr">{{ $item->product->name }}</a>
+		                                <a class="h5" href="{{ url('product_detail', $item->product->id) }}">{{ $item->product->name }}</a>
 		                                @switch($item->size)
 
 			                                @case('small')				   
@@ -75,7 +73,7 @@
                         <li>Total <span>${{$total_taxed}}</span> </li>
                     </ul>
 
-                    <a class="btn btn-margin btn-primary width-100" data-target="#order-modal" data-toggle="modal" href="#">
+                    <a class="btn btn-margin btn-primary width-100" href="{{ url('order') }}">
                         Order now <span class="ti-arrow-right"></span>
                     </a>
                 </div>
