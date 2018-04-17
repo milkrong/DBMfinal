@@ -264,20 +264,16 @@
 	  	</div>
 	</div>
 	<!-- / LOGIN | REGISTER MODAL -->
-
+	@if(Auth::check())
 	<!-- LOGGED MODAL -->
 	<div class="modal fade" id="loggedModal" tabindex="-1" role="dialog" >
 		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="ti-close" aria-hidden="true"></span></button>
-
-	  	<div class="modal-dialog" role="document">
+		<div class="modal-dialog" role="document">
 	    	<div class="modal-content width-100 pull-left pt-60 pb-60">
 				<div class="modal-header">
-					<h5 class="modal-title">{{ Auth::user() }}</h5>
+					<h5 class="modal-title">{{ Auth::user()->firstname." ".Auth::user()->lastname }}</h5>
 				</div>
 			    <div class="modal-body">
-					@if($message)
-						<p class="bg-primary">{{ $message }}</p>
-					@endif
 					<p>Email: {{ Auth::user()->email }}</p>
 						<p>Birthday: {{ Auth::user()->birthday }}</p>
 				</div>
@@ -287,6 +283,7 @@
 	    	</div>
 	  	</div>
 	</div>
+	@endif
 
  	<!-- SEARCH MODAL -->
 	<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" >
@@ -297,7 +294,8 @@
 				<div class="modal-body">
 					<div class="width-100" id="search">
 					    <form action="{{ url('search') }}" method="POST">
-					        <input type="search" value="" placeholder="type keyword(s) here" />
+							{{ csrf_field() }}
+					        <input type="search" placeholder="type keyword(s) here" name="search_key"/>
 					        <button type="submit" class="btn btn-primary">Search</button>
 					    </form>
 					</div>

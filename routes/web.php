@@ -14,6 +14,7 @@
 Route::get('/', 'HomeController@index')->name('index');
 Route::get('products/{category}', 'ProductsController@getIndex');
 Route::get('product_detail/{id}', 'ProductsController@getDetail');
+Route::post('search', 'ProductsController@search');
 
 Route::get('store','StoreController@getIndex');
 Route::get('about','HomeController@about');
