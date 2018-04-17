@@ -32,8 +32,8 @@ class CartController extends Controller
 	 			$cartItem = new CartItem();
 	 			$cartItem->product_id=$productId;
 	        	$cartItem->cart_id= $cart->id;
-	        	$cartItem->$quantity = $quantity;
-	        	$cartItem->$size = $size;
+	        	$cartItem->quantity = $quantity;
+	        	$cartItem->size = $size;
 	        	$cartItem->save();
 	 		}
 	        else

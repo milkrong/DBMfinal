@@ -70,8 +70,8 @@
 
                             <div class="">
                                 <div class="checkout-buttons">
-                                    <a class="btn btn-default pull-left" href="{{ url('order/2') }}}}"><span class="ti-arrow-left icon"></span> personal data</a>
-                                    <button class="btn btn-primary pull-right" type="submit">Payment <span class="ti-arrow-right icon"></span></button>
+                                    <a class="btn btn-default pull-left" href="{{ url('order/2') }}}}"><span class="ti-arrow-left icon"></span>Store</a>
+                                    <button class="btn btn-primary pull-right" type="submit">Confirmation <span class="ti-arrow-right icon"></span></button>
                                 </div>
                             </div>
                         </form>

@@ -124,14 +124,16 @@ class CheckoutController extends Controller
     public function place(Request $request)
     {
         $order = Order::where('user_id',Auth::user()->id)->first();
-        $orderItem = $order->OrderItem;
-        OrderItem::where('order_id', $order_id)->update(
+        OrderItem::create(
             [
+                'order_id' => $order->id,
                 'product_id' => $request->input('product_id'),
                 'amount' => $request->input('quantity'),
             ]
         );
 
-        return $order_id;
+        Cart::where('user_id',Auth::user()->id)->delete();
+
+        return redirect('/')->with('message','Order placed successfully');
     }
 }

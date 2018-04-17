@@ -49,7 +49,7 @@
 						</ul>
 						<ul class="nav navbar-nav nav navbar-nav side-nav text-center">
 							<li class="active"><a href="/products/all">Drink and Food</a></li>  
-							<li class="active"><a href="#">Stores</a></li>
+							<li class="active"><a href="{{ url('store') }}">Stores</a></li>
 	                        <li>
 		                        <a aria-expanded="true" class="collapsed" href="javascript:;" data-toggle="collapse" data-target="#colapse-item-1">
 		                        	Categories
@@ -95,7 +95,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="products/Fizzio™ Handcrafted sodas">
+										<a href="/products/Fizzio™ Handcrafted sodas">
 											<i class="ti-arrow-right" aria-hidden="true"></i>Fizzio™ Handcrafted sodas
 											<span>(101)</span>
 										</a>
@@ -271,8 +271,18 @@
 
 	  	<div class="modal-dialog" role="document">
 	    	<div class="modal-content width-100 pull-left pt-60 pb-60">
+				<div class="modal-header">
+					<h5 class="modal-title">{{ Auth::user() }}</h5>
+				</div>
 			    <div class="modal-body">
-			    Logged with {{ Auth::user() }}
+					@if($message)
+						<p class="bg-primary">{{ $message }}</p>
+					@endif
+					<p>Email: {{ Auth::user()->email }}</p>
+						<p>Birthday: {{ Auth::user()->birthday }}</p>
+				</div>
+				<div class="modal-footer">
+					<a href="{{ url('logout') }}">Log out</a>
 				</div>
 	    	</div>
 	  	</div>
@@ -286,7 +296,7 @@
 	    	<div class="modal-content width-100 pull-left pt-60 pb-60 no-background">
 				<div class="modal-body">
 					<div class="width-100" id="search">
-					    <form>
+					    <form action="{{ url('search') }}" method="POST">
 					        <input type="search" value="" placeholder="type keyword(s) here" />
 					        <button type="submit" class="btn btn-primary">Search</button>
 					    </form>

@@ -84,12 +84,12 @@
                                 </ul>
                             </div>
                         <input type="hidden" name="product_id" value="{{ $item->product->id }}">
-                        <input type="hidden" name="quantity" value="{{ $item->quantity }}}">
+                        <input type="hidden" name="quantity" value="{{ $item->quantity }}">
 
 
                         <div class="">
                             <div class="checkout-buttons">
-                                <a class="btn btn-default pull-left" href="{{ url('/order/3') }}"><span class="ti-arrow-left icon"></span> back to cart</a>
+                                <a class="btn btn-default pull-left" href="{{ url('/order/3') }}"><span class="ti-arrow-left icon"></span> back to payment</a>
                                 <button class="btn btn-primary pull-right" type="submit" >Place Order <span class="ti-arrow-right icon"></span></button>
                             </div>
                         </div>

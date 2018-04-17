@@ -77,8 +77,8 @@
 
                     <div class="">
                         <div class="checkout-buttons">
-                            <a class="btn btn-default pull-left" href="{{ url('/order/1') }}"><span class="ti-arrow-left icon"></span> back to cart</a>
-                            <button class="btn btn-primary pull-right" type="submit" >choose store <span class="ti-arrow-right icon"></span></button>
+                            <a class="btn btn-default pull-left" href="{{ url('/order/1') }}"><span class="ti-arrow-left icon"></span> back</a>
+                            <button class="btn btn-primary pull-right" type="submit" >Go to payment <span class="ti-arrow-right icon"></span></button>
                         </div>
                     </div>
                 </form>

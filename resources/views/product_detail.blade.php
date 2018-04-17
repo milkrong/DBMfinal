@@ -55,7 +55,7 @@
 								</div>
 							</div>
 
-						<a class="btn btn-default mt-30" href="{{ url('cart/add') }}">Add to Cart</a>
+						<a class="btn btn-default mt-30" id="cart_link" href="{{ url('cart/add',$detail->id,1,$detail->product_detail[0]->size) }}">Add to Cart</a>
 						</fieldset>
 					
 				</div>
@@ -103,6 +103,7 @@
 			document.getElementById('product_sugar').innerHTML = JSON.parse(x).sugar;
 			document.getElementById('product_calories').innerHTML = JSON.parse(x).calories;
 			document.getElementById('product_caffeine').innerHTML = JSON.parse(x).caffeine;
+			document.getElementById('cart_link').href = "/cart/add/" + JSON.parse(x).product_id +"/1/"+JSON.parse(x).size;
 		}
 	</script>
 @endsection

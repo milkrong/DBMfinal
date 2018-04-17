@@ -11,9 +11,12 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('index');
 Route::get('products/{category}', 'ProductsController@getIndex');
 Route::get('product_detail/{id}', 'ProductsController@getDetail');
+
+Route::get('store','StoreController@getIndex');
+Route::get('about','HomeController@about');
 
 Auth::routes();
 
