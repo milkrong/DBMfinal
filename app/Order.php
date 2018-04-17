@@ -13,11 +13,17 @@ class Order extends Model
 
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\User','user_id');
     }
 
-    public function OrderItem()
+    public function product()
     {
-        return $this->hasMany('App\OrderItem');
+        return $this->belongsToMany('App\Products','order_detail',
+            'order_id','product_id')->withPivot('amount');
+    }
+
+    public function store()
+    {
+        return $this->belongsTo('App\Store');
     }
 }

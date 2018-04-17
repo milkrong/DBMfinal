@@ -31,30 +31,30 @@
 		                    <div class="cart-item-right col-md-10">
 		                    	<div class="row">
 		                            <span class="cart-description col-xs-12 col-md-5">
-		                                <a class="h5" href="{{ url('product_detail', $item->product->id) }}">{{ $item->product->name }}</a>
-		                                @switch($item->size)
+		                                <a class="h5" href="{{ url('product_detail', $item->id) }}">{{ $item->name }}</a>
+		                                @switch($item->->pivot->size)
 
 			                                @case('small')				   
-			                                	<span class="cart-item-price h5 text-muted">$ {{ $item->product->product_detail[2]->price }}</span>
+			                                	<span class="cart-item-price h5 text-muted">$ {{ $item->product_detail[2]->price }}</span>
 			                                	@break
 			                                @case('medium')				   
-			                                	<span class="cart-item-price h5 text-muted">$ {{ $item->product->product_detail[1]->price }}</span>
+			                                	<span class="cart-item-price h5 text-muted">$ {{ $item->product_detail[1]->price }}</span>
 			                                	@break
 			                                @case('large')				   
-			                                	<span class="cart-item-price h5 text-muted">$ {{ $item->product->product_detail[0]->price }}</span>
+			                                	<span class="cart-item-price h5 text-muted">$ {{ $item->product_detail[0]->price }}</span>
 			                                	@break
 			                                @default				   
-			                                	<span class="cart-item-price h5 text-muted">$ {{ $item->product->product_detail[0]->price }}</span>
+			                                	<span class="cart-item-price h5 text-muted">$ {{ $item->product_detail[0]->price }}</span>
 			                            @endswitch
 		                            </span>
 
 									<span class="col-md-2 col-sm-12">
-										{{ $item->quantity }}
+										{{ $item->pivot->quantity }}
 									</span>
 
 		                            <span class="col-md-5 col-sm-12 text-right">
-		                                {{ $item->size }} 
-		                                <a class="cart-remove" href="{{ url('/cart/remove',$item->id) }}">
+		                                {{ $item->pivot->size }}
+		                                <a class="cart-remove" href="{{ url('cart/remove',$item->id) }}">
 		                                <span class="ti-trash icon pull-right mt-5 ml-10"></span>
 		                            </span>
 		                        </div>

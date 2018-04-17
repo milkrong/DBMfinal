@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12 mt-30 mb-30 width-100 pull-left">
-                        <h3>Order <span class="text-muted small smartphone-inline-fw">step 1</span>
+                        <h3>Order <span class="text-muted small smartphone-inline-fw">step 2</span>
                         </h3>
                     </div>
                     <div class="col-md-12">

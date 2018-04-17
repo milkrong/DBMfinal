@@ -8,11 +8,11 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12 mt-30 mb-30 width-100 pull-left">
-                            <h3>Order <span class="text-muted small smartphone-inline-fw">step 1</span>
+                            <h3>Order <span class="text-muted small smartphone-inline-fw">step 4</span>
                             </h3>
                         </div>
                         <div class="col-md-12">
-                            <p>Please Confirm your personal information and choose a store to pick up your order</p>
+                            <p>Please Confirm Products In Your Cart</p>
                         </div>
                     </div>
                 </div>
@@ -53,29 +53,29 @@
                                             <div class="cart-item-right col-md-10">
                                                 <div class="row">
                                                     <span class="cart-description col-xs-12 col-md-5">
-                                                        <a class="h5" href="{{ url('product_detail', $item->product->id) }}">{{ $item->product->name }}</a>
-                                                        @switch($item->size)
+                                                        <a class="h5" href="{{ url('product_detail', $item->id) }}">{{ $item->name }}</a>
+                                                        @switch($item->pivot->size)
 
                                                             @case('small')
-                                                            <span class="cart-item-price h5 text-muted">$ {{ $item->product->product_detail[2]->price }}</span>
+                                                            <span class="cart-item-price h5 text-muted">$ {{ $item->product_detail[2]->price }}</span>
                                                             @break
                                                             @case('medium')
-                                                            <span class="cart-item-price h5 text-muted">$ {{ $item->product->product_detail[1]->price }}</span>
+                                                            <span class="cart-item-price h5 text-muted">$ {{ $item->product_detail[1]->price }}</span>
                                                             @break
                                                             @case('large')
-                                                            <span class="cart-item-price h5 text-muted">$ {{ $item->product->product_detail[0]->price }}</span>
+                                                            <span class="cart-item-price h5 text-muted">$ {{ $item->product_detail[0]->price }}</span>
                                                             @break
                                                             @default
-                                                            <span class="cart-item-price h5 text-muted">$ {{ $item->product->product_detail[0]->price }}</span>
+                                                            <span class="cart-item-price h5 text-muted">$ {{ $item->product_detail[0]->price }}</span>
                                                         @endswitch
                                                     </span>
 
                                                     <span class="col-md-2 col-sm-12">
-										                {{ $item->quantity }}
+										                {{ $item->pivot->quantity }}
 									                </span>
 
                                                     <span class="col-md-5 col-sm-12 text-right">
-		                                                {{ $item->size }}
+		                                                {{ $item->pivot->size }}
 		                                            </span>
                                                 </div>
                                             </div>
@@ -83,8 +83,8 @@
                                     @endforeach
                                 </ul>
                             </div>
-                        <input type="hidden" name="product_id" value="{{ $item->product->id }}">
-                        <input type="hidden" name="quantity" value="{{ $item->quantity }}">
+                        <input type="hidden" name="product_id" value="{{ $item->id }}">
+                        <input type="hidden" name="quantity" value="{{ $item->pivot->quantity }}">
 
 
                         <div class="">

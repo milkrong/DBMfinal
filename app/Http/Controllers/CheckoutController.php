@@ -71,7 +71,7 @@ class CheckoutController extends Controller
     			break;
     		case '4':
     			$cart = Cart::where('user_id',Auth::user()->id)->first();
-    			$items = $cart->CartItem;
+    			$items = $cart->product;
     			return view('checkout4')->with('items',$items);
     			//confirmation page
     			break;

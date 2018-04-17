@@ -25,7 +25,7 @@ class CartController extends Controller
 	            $cart->save();
 	        }
 	        //echo $cart->cartItem;
-			$items = $cart->cartItem;
+			$items = $cart->product;
 
 	 		if(!$items)
 	 		{
@@ -67,24 +67,24 @@ class CartController extends Controller
 	            $cart->save();
 	        }
 	 
-	        $items = $cart->cartItem;
-	        $total = $tax=$total_taxed=0;
+	        $items = $cart->product;
+	        $total = $tax = $total_taxed=0;
 	        foreach($items as $item)
 	        {
-	        	switch ($item->size)
+	        	switch ($item->pivot->size)
 	        	{
 	        		case 'small':
-	        			$total += $item->product->product_detail[2]->price * $item->quantity;
+	        			$total += $item->product_detail[2]->price * $item->pivot->quantity;
 	        			break;
 	        		case 'medium':
-	        			$total += $item->product->product_detail[1]->price * $item->quantity;
+	        			$total += $item->product_detail[1]->price * $item->pivot->quantity;
 	        			break;
 	        		case 'large':
-	        			$total += $item->product->product_detail[0]->price * $item->quantity;
+	        			$total += $item->product_detail[0]->price * $item->pivot->quantity;
 	        			break;
 	        		
 	        		default:
-	        			$total += $item->product->product_detail[0]->price * $item->quantity;
+	        			$total += $item->product_detail[0]->price * $item->pivot->quantity;
 	        			break;
 	        	}
         	}

@@ -8,11 +8,11 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12 mt-30 mb-30 width-100 pull-left">
-                            <h3>Order <span class="text-muted small smartphone-inline-fw">step 2</span>
+                            <h3>Order <span class="text-muted small smartphone-inline-fw">step 3</span>
                             </h3>
                         </div>
                         <div class="col-md-12">
-                            <p>Choose a store you want ot pickup your order</p>
+                            <p>Choose a payment method</p>
                         </div>
                     </div>
                 </div>

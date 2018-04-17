@@ -10,8 +10,13 @@ class Store extends Model
 
     public $timestamps = false;
 
-    public function storeItem()
+    public function order()
     {
-        $this->hasMany('App\StoreItem');
+        $this->hasMany('App\Order');
+    }
+
+    public function product()
+    {
+        $this->belongsToMany('App\Products','store_product')->withPivot('amount');
     }
 }

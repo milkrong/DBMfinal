@@ -19,4 +19,19 @@ class Products extends Model
     {
     	return $this->hasMany('App\ProductDetail','product_id');
     }
+
+    public function store()
+    {
+        return $this->belongsToMany('App\Store','store_product');
+    }
+
+    public function order()
+    {
+        return $this->belongsToMany('App\Order','order_detail');
+    }
+
+    public function cart()
+    {
+        return $this->belongsToMany('App\Cart','cart_product');
+    }
 }
