@@ -278,7 +278,10 @@
 						<p>Birthday: {{ Auth::user()->birthday }}</p>
 				</div>
 				<div class="modal-footer">
-					<a href="{{ url('logout') }}">Log out</a>
+					<form action="{{ url('logout') }}" method="post">
+						{{ csrf_field() }}
+						<button type="submit" class="btn btn-primary">Log out</button>
+					</form>
 				</div>
 	    	</div>
 	  	</div>

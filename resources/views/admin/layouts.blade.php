@@ -45,27 +45,31 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ url('admin/index') }}">Cafe Shop Admin</a>
+            <a class="navbar-brand" href="{{ url('admin/home') }}">Cafe Shop Admin</a>
         </div>
+
+        <ul class="nav navbar-top-links navbar-right">
+            <a href="{{ url('admin/logout') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+        </ul>
         <!-- /.navbar-header -->
 
         <div class="navbar-default sidebar" role="navigation">
             <div class="sidebar-nav navbar-collapse">
                 <ul class="nav" id="side-menu">
                     <li>
-                        <a href="{{ url('admin/index') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        <a href="{{ url('admin/home') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Aggregation<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="{{ url('admin/diversity') }}">Diversity</a>
+                                <a href="{{ url('admin/upload/diversity') }}">Diversity</a>
                             </li>
                             <li>
-                                <a href="{{ url('admin/top_store') }}">Top Sale Store</a>
+                                <a href="{{ url('admin/upload/top_store') }}">Top Sale Store</a>
                             </li>
                             <li>
-                                <a href="{{ url('admin/awards') }}">Customer Awards</a>
+                                <a href="{{ url('admin/upload/awards') }}">Customer Awards</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->

@@ -38,9 +38,12 @@ Route::post('payment/update', 'CheckoutController@update_payment');
 Route::post('place', 'CheckoutController@place');
 
 //Admin
-Route::get('admin/index', 'AdminController@index');
+Route::get('admin/home', 'AdminController@home')->name('admin.home');
 Route::get('admin/customers', 'AdminController@customers');
 Route::get('admin/order', 'AdminController@order');
-Route::get('admin/diversity', 'AdminController@diversity');
-Route::get('admin/top_store', 'AdminController@topStore');
-Route::get('admin/awards', 'AdminController@awards');
+Route::get('admin/upload/{aggregation}', 'AdminController@upload');
+Route::post('admin/top_store/show', 'AdminController@show');
+Route::get('admin/login', 'AdminLoginController@showLoginForm')->name('admin.login');
+Route::post('admin/login', 'AdminLoginController@login')->name('admin.login.submit');
+Route::get('admin/logout', 'AdminLoginController@logout')->name('admin.logout');
+
