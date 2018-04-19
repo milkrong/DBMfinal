@@ -250,8 +250,7 @@
 				                    <div class="form-group mt-30">
 				                        <!-- Button -->
 				                        <div class="col-sm-12 login-btn">
-				                            <button id="btn-sign-up" class="btn btn-primary" type="submit">Sign up  </button>
-				                            <a id="btn-fb-sign-up" href="#" class="btn btn-default">Facebook sign up</a>
+				                            <button id="btn-sign-up" class="btn btn-primary" type="submit">Sign up</button>
 				                        </div>
 				                    </div>
 				                </form>
@@ -266,21 +265,22 @@
 	<!-- / LOGIN | REGISTER MODAL -->
 	@if(Auth::check())
 	<!-- LOGGED MODAL -->
-	<div class="modal fade" id="loggedModal" tabindex="-1" role="dialog" >
+	<div class="modal fade" id="loggedModal" tabindex="-1" role="document" >
 		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="ti-close" aria-hidden="true"></span></button>
 		<div class="modal-dialog" role="document">
 	    	<div class="modal-content width-100 pull-left pt-60 pb-60">
-				<div class="modal-header">
-					<h5 class="modal-title">{{ Auth::user()->firstname." ".Auth::user()->lastname }}</h5>
-				</div>
-			    <div class="modal-body">
-					<p>Email: {{ Auth::user()->email }}</p>
-						<p>Birthday: {{ Auth::user()->birthday }}</p>
+			    <div class="modal-body ">
+                    <ul>
+                        <li><h5 class="modal-title">{{ Auth::user()->firstname." ".Auth::user()->lastname }}</h5></li>
+                        <li>Email: {{ Auth::user()->email }}</li>
+                        <li>Birthday: {{ Auth::user()->birthday }}</li>
+                    </ul>
 				</div>
 				<div class="modal-footer">
+                    <a href="{{ url('myOrder') }}" class="btn btn-default">Orders</a>
 					<form action="{{ url('logout') }}" method="post">
 						{{ csrf_field() }}
-						<button type="submit" class="btn btn-primary">Log out</button>
+						<button type="submit" class="btn btn-default">Log out</button>
 					</form>
 				</div>
 	    	</div>

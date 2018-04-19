@@ -32,7 +32,7 @@
 		                    	<div class="row">
 		                            <span class="cart-description col-xs-12 col-md-5">
 		                                <a class="h5" href="{{ url('product_detail', $item->id) }}">{{ $item->name }}</a>
-		                                @switch($item->->pivot->size)
+		                                @switch($item->pivot->size)
 
 			                                @case('small')				   
 			                                	<span class="cart-item-price h5 text-muted">$ {{ $item->product_detail[2]->price }}</span>

@@ -4,11 +4,19 @@
 	<div class="container-fluid main-wrapper">
 		<div class="row">
 			@foreach($details as $detail)
-			<div class="col-md-7 mt-15">
-                <div class="width-100 pull-left">  	
-                	<img  class="img-responsive" alt="carousel image" src="{{$detail->picture}}">
-                </div>
-			</div>
+				<div class="col-md-7">
+					<div class="carousel  slide product-slide carousel-fade" id="product-carousel">
+						<div class="carousel-inner no-padding width-100">
+							<div class="item active"><img alt="carousel image" src="{{ $detail->picture }}" title=""></div>
+							<div class="item"></div>
+							<div class="item"></div>
+						</div>
+
+						<ol class="carousel-indicators">
+							<li class="active" data-slide-to="0" data-target="#product-carousel"> <img alt="" src="{{ $detail->picture }}" class="img-thumbnail"> </li>
+						</ol>
+					</div>
+				</div>
 
 			<div class="clearfix visible-xs visible-sm"></div>
 			

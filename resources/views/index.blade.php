@@ -8,10 +8,10 @@
 			<div class="home col-md-12 no-padding">
 				<div class="home-slider home-slider-full-page">
 					<div class="swiper-wrapper">
-						<div class="swiper-slide home-slider-centered" style="background-image:url(assets/img/slider/slide-02.png)">
+						<div class="swiper-slide home-slider-centered" style="background-image:url(assets/img/slider/homeCafe1.jpeg)">
 						</div>
 
-						<div class="swiper-slide home-slider-centered" style="background-image:url(assets/img/slider/slide-02.png)">
+						<div class="swiper-slide home-slider-centered" style="background-image:url(assets/img/slider/homeCafe2.jpeg)">
 						</div>
 
 					</div>

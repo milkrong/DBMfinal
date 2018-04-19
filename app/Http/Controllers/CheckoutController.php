@@ -136,4 +136,12 @@ class CheckoutController extends Controller
 
         return redirect('/')->with('message','Order placed successfully');
     }
+
+    public function showOrder()
+    {
+        $orders = Order::where('user_id',Auth::user()->id)->paginate(10);
+        $products = $orders->load('product');
+        return view('my_order',compact('orders'));
+        //echo $orders;
+    }
 }

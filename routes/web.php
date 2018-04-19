@@ -36,6 +36,7 @@ Route::post('bill/update', 'CheckoutController@update_bill');
 Route::post('store/update', 'CheckoutController@update_store');
 Route::post('payment/update', 'CheckoutController@update_payment');
 Route::post('place', 'CheckoutController@place');
+Route::get('myOrder', 'CheckoutController@showOrder');
 
 //Admin
 Route::get('admin/home', 'AdminController@home')->name('admin.home');

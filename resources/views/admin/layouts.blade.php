@@ -23,6 +23,9 @@
     <!-- Custom Fonts -->
     <link href="{{ asset('admin/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
 
+    <!-- Morris Charts CSS -->
+    <link href="{{ asset('admin/vendor/morrisjs/morris.css') }}" rel="stylesheet">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -90,8 +93,7 @@
     @yield('page')
 
 </div>
-<!-- /#wrapper -->
-    @yield('scripts')
+
 <!-- jQuery -->
 <script src="{{ asset('admin/vendor/jquery/jquery.min.js') }}"></script>
 
@@ -104,6 +106,8 @@
 <!-- Custom Theme JavaScript -->
 <script src="{{ asset('admin/js/sb-admin-2.js') }}"></script>
 
+<!-- /#wrapper -->
+@yield('scripts')
 </body>
 
 </html>
