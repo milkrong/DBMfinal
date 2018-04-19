@@ -17,9 +17,9 @@
 			    <div class="container-fluid">
 					<div class="navbar-header text-center">
 						<img src="{{ asset('assets/img/logo.png') }}" alt="store logo" class="width-50 mt-30 mb-30">
-						<span class="navbar-header-title mb-0">Maruno Cafe
+                        <a href="{{ url('/') }}"><span class="navbar-header-title mb-0">Maruno Cafe
 							<span class="text-muted x-small">online shop</span>
-						</span>
+						</span></a>
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
 						<span class="sr-only">Toggle navigation</span>
 						navigation <span class="ti-menu"></span>
@@ -42,9 +42,7 @@
 								<span data-focus="search" data-toggle="modal" data-target="#searchModal" class="ti-search"></span>
 							</li>
 							<li>
-								<span class="ti-shopping-cart">
-									<a href="{{ url('/cart')}}"></a>
-								</span>
+                                <a href="{{ url('/cart')}}"><span class="ti-shopping-cart"></span></a>
 							</li>
 						</ul>
 						<ul class="nav navbar-nav nav navbar-nav side-nav text-center">
@@ -61,55 +59,46 @@
 									<li>
 										<a href="/products/Freshly Brewed Coffee">
 											<i class="ti-arrow-right" aria-hidden="true"></i>Freshly Brewed Coffee
-											<span>(6)</span>
 										</a>
 									</li>
 									<li>
 										<a href="/products/Cold Brew and Iced Coffee">
 											<i class="ti-arrow-right" aria-hidden="true"></i>Cold Brew and Iced Coffee
-											<span>(12)</span>
 										</a>
 									</li>
 									<li>
 										<a href="/products/Evolution Fresh™">
 											<i class="ti-arrow-right" aria-hidden="true"></i>Evolution Fresh™
-											<span>(101)</span>
 										</a>
 									</li>
 									<li>
 										<a href="/products/Espresso Beverages">
 											<i class="ti-arrow-right" aria-hidden="true"></i>Espresso Beverages
-											<span>(6)</span>
 										</a>
 									</li>
 									<li>
 										<a href="/products/Frappuccino® Blended Beverages">
 											<i class="ti-arrow-right" aria-hidden="true"></i>Frappuccino® Blended Beverages
-											<span>(12)</span>
 										</a>
 									</li>
 									<li>
 										<a href="/products/Smoothies">
 											<i class="ti-arrow-right" aria-hidden="true"></i>Smoothies
-											<span>(101)</span>
 										</a>
 									</li>
 									<li>
 										<a href="/products/Fizzio™ Handcrafted sodas">
 											<i class="ti-arrow-right" aria-hidden="true"></i>Fizzio™ Handcrafted sodas
-											<span>(101)</span>
 										</a>
 									</li>
 									<li>
 										<a href="/products/Refreshers™ Beverages">
 											<i class="ti-arrow-right" aria-hidden="true"></i>Refreshers™ Beverages
-											<span>(101)</span>
 										</a>
 									</li>
 									<li>
 										<a href="/products/Tea">
 											<i class="ti-arrow-right" aria-hidden="true"></i>Tea
-											<span>(101)</span>
 										</a>
 									</li>
                                 </ul>
